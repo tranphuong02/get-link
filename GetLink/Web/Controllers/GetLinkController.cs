@@ -56,15 +56,19 @@ namespace Web.Controllers
         private static string GetPageContent(string url, ref CookieCollection cookies)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
+            string html;
+
             request.CookieContainer = new CookieContainer();
             request.CookieContainer.Add(cookies);
             
             var response = (HttpWebResponse)request.GetResponse();
             using (var stream = new StreamReader(response.GetResponseStream()))
             {
-                cookies = response.Cookies;
-                return stream.ReadToEnd();
+                html = stream.ReadToEnd();
             }
+
+            cookies = response.Cookies;
+            return html;
         }
 
         private static void Logout(string url)
@@ -72,19 +76,31 @@ namespace Web.Controllers
            WebRequest.Create(url).GetResponse();
         }
 
-        private static FileResponse Post(string url, string postData, ref CookieCollection cookies)
+        private static string Post(string url, string postData, ref CookieCollection cookies)
         {
             try
             {
                 var getRequest = (HttpWebRequest)WebRequest.Create(url);
+                var html = "";
+
+                // Cookie
                 getRequest.CookieContainer = new CookieContainer();
                 getRequest.CookieContainer.Add(cookies);
+
+                 Debug.WriteLine(cookies.ToString());
+
+                // IP address
+                getRequest.ServicePoint.BindIPEndPointDelegate = delegate { return new IPEndPoint(IPAddress.Parse("192.168.0.102"), 0); };
+
+                // Headers
+                getRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+                getRequest.ContentType = "application/x-www-form-urlencoded";
+                getRequest.UserAgent = "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36";
+                
                 getRequest.Method = WebRequestMethods.Http.Post;
                 getRequest.ProtocolVersion = HttpVersion.Version11;
                 getRequest.AllowWriteStreamBuffering = true;
                 getRequest.AllowAutoRedirect = true;
-                getRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
-                getRequest.ContentType = "application/x-www-form-urlencoded";
 
                 var byteArray = Encoding.ASCII.GetBytes(postData);
                 getRequest.ContentLength = byteArray.Length;
@@ -94,36 +110,18 @@ namespace Web.Controllers
                 newStream.Close();
 
                 var response = (HttpWebResponse)getRequest.GetResponse();
-                var result = new FileResponse();
                 using (var stream = new StreamReader(response.GetResponseStream()))
                 {
-
-                    Debug.WriteLine("------------------------------------------------------------------");
+                    html = stream.ReadToEnd();
                     Debug.WriteLine(stream.ReadToEnd());
-
-                    cookies = response.Cookies;
-                    result.IsSuccess = response.StatusCode != HttpStatusCode.BadRequest;
-
-                    if (HttpStatusCode.BadRequest == response.StatusCode)
-                    {
-                        result = new FileResponse
-                        {
-                            IsSuccess = false,
-                            Content = stream.ReadToEnd()
-                        };
-                    }
-
-                    result = new FileResponse
-                    {
-                        IsSuccess = true,
-                        Content = JsonConvert.DeserializeObject<SuccessResponse>(stream.ReadToEnd()).url
-                    };
                 }
-                return result;
+
+                cookies = response.Cookies;
+                return html;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                return new FileResponse();
+                return "";
             }
         } 
 
