@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web;
 using System.Web.Mvc;
 using HtmlAgilityPack;
+using Web.Helpers;
 
 namespace Web.Controllers
 {
@@ -17,8 +17,8 @@ namespace Web.Controllers
            // GetLink();
 
             var web = new WebClient();
-            web.DownloadString(Congifs.DownloadLink);
-            //web.UploadValues(Congifs.DownloadLink);
+            web.DownloadString(Configs.DownloadLink);
+            //web.UploadValues(Configs.DownloadLink);
 
             return View();
         }
@@ -26,34 +26,22 @@ namespace Web.Controllers
         private void GetLink()
         {
             var cookies = new CookieCollection();
-            GetLinkHelper.Get(Congifs.LogoutUrl, ref cookies);
+            GetLinkHelper.Get(Configs.LogoutUrl, ref cookies);
 
             // Login
-            var loginHtml = GetLinkHelper.Get(Congifs.DownloadLink, ref cookies);
-            var loginFsCsrf = GetLinkHelper.FsLoginCsrfName(GetLinkHelper.HtmlDocument(loginHtml), Congifs.FsCsrfName);
-            var postLoginData = string.Format(Congifs.RequestLoginParams, loginFsCsrf);
-            var downloadHtml = GetLinkHelper.Post(Congifs.LoginUrl, postLoginData, ref cookies);
+            var loginHtml = GetLinkHelper.Get(Configs.DownloadLink, ref cookies);
+            var loginFsCsrf = GetLinkHelper.FsLoginCsrfName(GetLinkHelper.HtmlDocument(loginHtml), Configs.FsCsrfName);
+            var postLoginData = string.Format(Configs.RequestLoginParams, loginFsCsrf);
+            var downloadHtml = GetLinkHelper.Post(Configs.LoginUrl, postLoginData, ref cookies);
 
             // Post download link
-            var fileFsCsrf = GetLinkHelper.FsDownloadCsrfName(GetLinkHelper.HtmlDocument(downloadHtml), Congifs.FsCsrfName);
-            var postDownloadData = string.Format(Congifs.RequestDownloadParams, fileFsCsrf);
-            GetLinkHelper.Post(Congifs.GetFileLink, postDownloadData, ref cookies);
+            var fileFsCsrf = GetLinkHelper.FsDownloadCsrfName(GetLinkHelper.HtmlDocument(downloadHtml), Configs.FsCsrfName);
+            var postDownloadData = string.Format(Configs.RequestDownloadParams, fileFsCsrf);
+            GetLinkHelper.Post(Configs.GetFileLink, postDownloadData, ref cookies);
 
             // Logout
-            GetLinkHelper.Get(Congifs.LogoutUrl, ref cookies);
+            GetLinkHelper.Get(Configs.LogoutUrl, ref cookies);
         }
-    }
-
-    public static class Congifs
-    {
-        public static string LoginUrl = "https://www.fshare.vn/login";
-        public static string LogoutUrl = "https://www.fshare.vn/logout";
-        public static string GetFileLink = "https://www.fshare.vn/download/get";
-        public static string DownloadLink = "https://www.fshare.vn/file/T0R2T7630T/";
-        public static string FsCsrfName = "fs_csrf";
-        public static string LinkCodeName = "DownloadForm[linkcode]";
-        public static string RequestLoginParams = "fs_csrf={0}&LoginForm%5Bemail%5D=tran.phuongvd02%40gmail.com&LoginForm%5Bpassword%5D=trUng+zjn+12%23&LoginForm%5Bcheckloginpopup%5D=0&LoginForm%5BrememberMe%5D=0&yt0=%C4%90%C4%83ng+nh%E1%BA%ADp";
-        public static string RequestDownloadParams = "fs_csrf={0}&DownloadForm%5Bpwd%5D=&DownloadForm%5Blinkcode%5D=T0R2T7630T&ajax=download-form&undefined=undefined";
     }
 
     public static class GetLinkHelper
