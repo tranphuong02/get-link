@@ -166,14 +166,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Getlink2Controller.cs" />
+    <Compile Include="Controllers\Getlink3Controller.cs" />
     <Compile Include="Helpers\Configs.cs" />
-    <Compile Include="Controllers\GetLink1Controller.cs" />
     <Compile Include="Controllers\GetLinkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GetLinkHelper.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\WebClientHelpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -241,6 +242,7 @@
     <Content Include="Views\GetLink\Index.cshtml" />
     <Content Include="Views\GetLink1\Index.cshtml" />
     <Content Include="Views\Getlink2\Index.cshtml" />
+    <Content Include="Views\Getlink3\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
