@@ -1,0 +1,6 @@
+D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\DatabaseAccess.dll.config
+D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\DatabaseAccess.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\DatabaseAccess.pdb
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Release\DatabaseAccess.csprojResolveAssemblyReference.cache
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Release\DatabaseAccess.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Release\DatabaseAccess.pdb

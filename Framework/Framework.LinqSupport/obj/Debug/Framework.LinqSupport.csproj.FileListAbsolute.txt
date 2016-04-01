@@ -1,0 +1,5 @@
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\bin\Debug\Framework.LinqSupport.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\bin\Debug\Framework.LinqSupport.pdb
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Debug\Framework.LinqSupport.csprojResolveAssemblyReference.cache
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Debug\Framework.LinqSupport.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Debug\Framework.LinqSupport.pdb

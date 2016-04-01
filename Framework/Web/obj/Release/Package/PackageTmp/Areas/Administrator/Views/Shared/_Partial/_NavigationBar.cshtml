@@ -1,0 +1,47 @@
+﻿@using Framework.Utility
+<nav class="navbar-default navbar-static-side animated fadeInLeft" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+
+            <!-- Header -->
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Framework</strong>
+                            </span> <span class="text-muted text-xs block">@User.Identity.Name <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="@Url.Action("ChangePassword", "Account")">Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("UpdateProfile", "Account")">Update Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Logout", "Account")">Logout</a></li>
+                    </ul>
+                </div>
+
+                <div class="logo-element">
+                    VN
+                </div>
+            </li>
+
+            <!-- Menu content -->
+            <!-- Single Menu -->
+            <li class="menu-item @Html.ActivePage("Statistics", "", "active") @Html.ActivePage("Home", "", "active")">
+                <a href="@Url.Action("Index", "Statistics")"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+
+            <li class="menu-item @Html.ActivePage("UserManagement", "", "active")">
+                <a href="@Url.Action("Index", "UserManagement")"><i class="fa fa-user"></i> <span class="nav-label">User Management</span></a>
+            </li>
+
+            <li class="menu-item @Html.ActivePage("History", "", "active")">
+                <a href="@Url.Action("Index", "History")"><i class="fa fa-history"></i> <span class="nav-label">User Activity</span></a>
+            </li>
+            }
+        </ul>
+    </div>
+</nav>

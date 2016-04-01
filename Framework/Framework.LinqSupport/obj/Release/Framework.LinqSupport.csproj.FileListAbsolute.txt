@@ -1,0 +1,4 @@
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\bin\Release\Framework.LinqSupport.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\bin\Release\Framework.LinqSupport.pdb
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Release\Framework.LinqSupport.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Release\Framework.LinqSupport.pdb

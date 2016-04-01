@@ -1,0 +1,11 @@
+D:\Document\GetLink\mvc5-web-framework\Framework\Web\bin\DatabaseAccess.dll.config
+D:\Document\GetLink\mvc5-web-framework\Framework\Web\bin\DatabaseAccess.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\Web\bin\DatabaseAccess.pdb
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.csprojResolveAssemblyReference.cache
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.InitialDatabase.resources
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.AddTableBlackList.resources
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.UpdateDatabase.resources
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.UpdateDatabase1.resources
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.csproj.GenerateResource.Cache
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.pdb

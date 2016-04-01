@@ -1,0 +1,107 @@
+﻿@using Framework.Utility
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Good Life VN- @ViewBag.Title</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Morris -->
+    <link href="~/Content/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <link href="~/Content/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="~/Content/plugins/toastr/toastr.min.css" rel="stylesheet">
+    -->
+
+    <link href="~/Content/plugins/dataTables_V1/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+    @RenderSection("styles", false)
+
+    <link href="~/Content/ladda.css" rel="stylesheet" />
+</head>
+
+<body class="">
+    <!-- LOADING -->
+    @{
+        Html.RenderPartial("_Partial/_Loading");
+    }
+
+    <div id="wrapper">
+        <!-- MENU -->
+        @{
+            Html.RenderPartial("_Partial/_NavigationBar");
+        }
+
+        <!-- MAIN CONTENT -->
+        <div id="page-wrapper" class="gray-bg">
+
+            <!-- Header Content-->
+            @{
+                Html.RenderPartial("_Partial/_Header");
+            }
+
+            <!-- Body -->
+            @{
+                Html.RenderPartial("_Partial/_BodyHeader");
+            }
+            <div class="wrapper wrapper-content animated fadeInRight">
+                @Html.ShowStatusMessage()
+                @RenderBody()
+            </div>
+            <!-- Footer Content -->
+            @{
+                Html.RenderPartial("_Partial/_Footter");
+            }
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.4.min.js"></script>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Scripts/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Toastr script -->
+    <script src="~/Scripts/plugins/toastr/toastr.min.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="~/Scripts/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <script src="~/Scripts/plugins/dataTables_V1/jquery.dataTables.js"></script>
+    <script src="~/Scripts/plugins/dataTables_V1/dataTables.bootstrap.js"></script>
+
+    <script src="~/Scripts/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Jquery Validate -->
+    <script src="~/Scripts/plugins/validate/jquery.validate.min.js"></script>
+    <script src="~/Scripts/plugins/validate/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/additional-methods.min.js"></script>
+
+    <script src="~/Scripts/plugins/validate/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- Custom -->
+    <!-- common variable and functions -->
+   
+    <!-- Custom and plugin JavaScript -->
+    <script src="~/Scripts/date.format.js"></script>
+    <script src="~/Scripts/template.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/spin.min.js"></script>
+    <script src="~/Scripts/ladda.min.js"></script>
+
+    @RenderSection("scripts", false)
+</body>
+</html>

@@ -1,0 +1,6 @@
+D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\Framework.DataAccess.EntityFramework.dll.config
+D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\Framework.DataAccess.EntityFramework.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\Framework.DataAccess.EntityFramework.pdb
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.dll
+D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.pdb

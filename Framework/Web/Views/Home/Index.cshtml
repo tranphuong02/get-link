@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="box_getlink" class="portlet" style="margin-bottom: 1.3em">
+    <div class="portlet-header">
+        <h3>
+            <i class="fa fa-cloud"></i>
+            Tool Get link Fshare, 4share, Tenlua, Tailieu.vn,... Get link VIP Max Speed, Get link tốc độ cao
+        </h3>
+    </div>
+    <div class="portlet-content">
+        <div class="alert alert-danger" id="c-alert" style="margin-top: 0px; word-wrap: break-word; display: none;">
+            <i class="fa fa-warning" id="icon-error"></i> <span id="c-error-mess"></span>
+        </div>
+        <div class="form-group">
+            <div class="input-group form-group">
+                <input class="form-control" style="height: 38px; z-index: 0" id="inputLinkget" placeholder="Sao chép địa chỉ tải về vào đây | Mật khẩu (nếu có)" type="text">
+                <span id="span_pass" class="input-group-addon" style="display: none; border-left: 0; border-right: 0;"><i style="width: 14px; height: 14px;" class="fa fa-lock fa-lg"></i></span>
+                <input id="input_pass" class="form-control" style="display: none; height: 38px; z-index: 0" id="pass" placeholder="Nhập mật khẩu tải về" type="text"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" style="height: 38px;" id="getlink" type="button"><span id="text_link">Get link <i class="fa fa-arrow-circle-right"></i></span></button>
+                </span>
+            </div>
+        </div>
+        <div id="getlink_result" class="form-group">
+            <div style="text-align: center; font-weight: bold; word-wrap: break-word; margin-top: 10px; margin-bottom: 0px;">
+                <div id="file_info" style="padding: 10px 0 5px 0; display: none;"></div>
+                <div id="live" style="padding: 10px 0 15px 0; display: none;"> Do đang thiếu kinh phí để duy trì host get ! Nên mình đặt 1 link quảng cáo ! Các bạn thông cảm đợi 5s click SKIP AD để ủng hộ mình tiếp tục duy trì nha !</div>
+                <div id="proxy_info" style="padding: 15px 0 15px 0; display: none;">Bạn phải thêm proxy <font id="proxy" color="red"></font> vào IDM trước khi Download
+                </div>
+            </div>
+            <div id="form_down" style="padding: 10px 0 10px 0; display: none;" class="input-group">
+                <span id="copy-link" class="input-group-addon"><i class="fa fa-cut"></i></span>
+                <input style="background-color: #F8F8F8;" onclick=" $(this).select(); " class="form-control" id="inputLink" type="text" readonly>
+                <span class="input-group-btn">
+                    <a id="a_down"><button id="down" style="border-bottom-left-radius: 0 !important; border-top-left-radius: 0 !important;" class="btn btn-secondary" type="button">Tải xuống <i class="fa fa-download"></i></button></a>
+                </span>
+            </div>
+            <div id="ouo" style="text-align: center; padding: 10px 0 5px 0; display: none;">
+                <hr>
+                <h3>Hướng dẫn bỏ qua quảng cáo link <b style="color: #f06060">Ouo.io</b>
+                </h3>
+                <hr>
+                Tích vào ô <b style="color: #f06060">Tôi không phải là người máy</b> và xác nhận hình ảnh <br/>
+                <img src="/content/front-end/images/clickads/ouo1.png" style="max-width: 464px" width="70%" height="70%">
+                <hr>
+                Click chuột phải vào nút <b style="color: #f06060">Get link</b> và chọn <b style="color: #f06060">Mở link trong Tab mới</b> <br/>
+                <img src="/content/front-end/images/clickads/ouo2.png" style="max-width: 381px" width="70%" height="70%">
+                <hr>
+            </div>
+        </div>
+        <div id="option_result" class="form-group"></div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        @functions{
+            public string TokenHeaderValue()
+            {
+                string cookieToken, formToken;
+                AntiForgery.GetTokens(null, out cookieToken, out formToken);
+                return cookieToken + ":" + formToken;
+            }
+        }
+
+        var $inputLinkget,
+            $btnGetlink;
+        $(document).ready(function() {
+            $inputLinkget = $('#inputLinkget');
+            $btnGetlink = $('#getlink');
+
+            $btnGetlink.on('click', function() {
+                $.ajax("/api/getlink/v1", {
+                    type: "post",
+                    contentType: "application/json",
+                    data: {
+                        "Token": "bbb",
+                        "Type": 1,
+                        "Url": "https://www.fshare.vn/file/T0R2T7630T/",
+                        "Password": ""
+                    },
+                    dataType: "json",
+                    headers: {
+                        'RequestVerificationToken': '@TokenHeaderValue()'
+                    }
+                });
+            });
+        });
+    </script>
+}

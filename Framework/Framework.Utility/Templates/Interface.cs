@@ -1,0 +1,16 @@
+﻿//////////////////////////////////////////////////////////////////////
+// File Name    : $itemname$
+// Summary      : 
+// Author       : $username$
+// Change Log   : $time$ - Create Date
+/////////////////////////////////////////////////////////////////////
+
+using System;
+
+namespace $rootnamespace$
+{
+	public interface $safeitemrootname$
+	{
+
+	}
+}

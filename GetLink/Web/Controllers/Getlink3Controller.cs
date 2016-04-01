@@ -37,7 +37,6 @@ namespace Web.Controllers
             request.Method = WebRequestMethods.Http.Post;
             request.CookieContainer = cookies;
             
-
             // Headers
             request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
             request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
