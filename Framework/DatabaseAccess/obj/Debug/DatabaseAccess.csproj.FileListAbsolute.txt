@@ -9,3 +9,14 @@ D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\Databa
 D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.csproj.GenerateResource.Cache
 D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.dll
 D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.pdb
+D:\Project\2015\get-link\Framework\Web\bin\DatabaseAccess.dll.config
+D:\Project\2015\get-link\Framework\Web\bin\DatabaseAccess.dll
+D:\Project\2015\get-link\Framework\Web\bin\DatabaseAccess.pdb
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.csprojResolveAssemblyReference.cache
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.InitialDatabase.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.AddTableBlackList.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.UpdateDatabase.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.Migrations.UpdateDatabase1.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.csproj.GenerateResource.Cache
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.dll
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Debug\DatabaseAccess.pdb

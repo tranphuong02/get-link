@@ -22,6 +22,7 @@ namespace Transverse.Models.Business.Getlink
         public string Password { get; set; }
 
         public int? CustomerId { get; set; }
+
         public int CustomerType { get; set; }
     }
 }

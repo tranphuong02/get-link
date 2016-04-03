@@ -16,5 +16,7 @@ namespace Transverse.Models.Business.Getlink
         public int ads_type { get; set; }
         public string ads_url { get; set; }
         public string ads_introduction { get; set; }
+        public string file_name { get; set; }
+        public string file_size { get; set; }
     }
 }

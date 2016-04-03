@@ -1,0 +1,42 @@
+﻿2016-04-03 19:45:29,178 [10] ERROR: 
+<Exception details>
+    We have detected an exception. Message output start
+    [Date and time of occurrence]
+        2016/04/03 12:45:29
+    [Member Name]
+        RewriteUrl
+    [Source Path]
+        D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs
+    [Source Line Number]
+        315
+    [Message content]
+        Object reference not set to an instance of an object.
+    [Stack on the internal exception]
+    [Exception class]      System.NullReferenceException
+    [Exception message]    Object reference not set to an instance of an object.
+    [Exception stack trace]   at BusinessLogic.GetlinkBusiness.RewriteUrl(FShareResultViewModel viewModel) in D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs:line 309
+</Exception details>
+
+
+
+2016-04-03 19:45:58,858 [11] ERROR: 
+<Exception details>
+    We have detected an exception. Message output start
+    [Date and time of occurrence]
+        2016/04/03 12:45:58
+    [Member Name]
+        RewriteUrl
+    [Source Path]
+        D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs
+    [Source Line Number]
+        315
+    [Message content]
+        Object reference not set to an instance of an object.
+    [Stack on the internal exception]
+    [Exception class]      System.NullReferenceException
+    [Exception message]    Object reference not set to an instance of an object.
+    [Exception stack trace]   at BusinessLogic.GetlinkBusiness.RewriteUrl(FShareResultViewModel viewModel) in D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs:line 309
+</Exception details>
+
+
+

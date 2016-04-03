@@ -6,9 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- CSS BEGIN -->
 		<link rel="stylesheet" href="Content/front-end/css/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="Content/front-end/css/animate.css" type="text/css" />
 		<link rel="stylesheet" href="Content/front-end/css/font-awesome.min.css" type="text/css" />
 		<link rel="stylesheet" href="Content/front-end/css/styles.css" type="text/css" />
 		<link rel="stylesheet" href="Content/front-end/css/header.css" type="text/css" />
+		<link rel="stylesheet" href="Content/front-end/css/content.css" type="text/css" />
+		<link rel="stylesheet" href="Content/front-end/css/footer.css" type="text/css" />
 		<!-- CSS END -->
 	</head>
 	<body>
@@ -32,7 +35,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="navbar-collapse">
 					  <ul class="nav navbar-nav">
-						<li class="dropdown active">
+						<li class="dropdown ">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hướng dẫn <span class="caret"></span></a>
 						  <ul class="dropdown-menu">
 							<li><a href="#">Get link fshare</a></li>
@@ -43,27 +46,191 @@
 							<li><a href="#">Bỏ quảng cáo adf</a></li>
 						  </ul>
 						</li>
-						<li class="dropdown">
+<!-- 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sản phẩm <span class="caret"></span></a>
 						  <ul class="dropdown-menu">
 							<li><a href="#">Tool get link cho window</a></li>
 							<li><a href="#">Tool get link cho android</a></li>
 							<li><a href="#">Tool get link cho ios</a></li>
 						  </ul>
-						</li>
-						<li><a href="#">Mua point fshare</a></li>
-						<li><a href="#">Host hỗ trợ</a></li>
+						</li> -->
+		<!-- 				<li><a href="#">Mua point fshare</a></li>
+						<li><a href="#">Host hỗ trợ</a></li> -->
 						<li><a href="#">Share acc vip</a></li>
 						<li><a href="#">Nội quy</a></li>
-						<li><a href="#">Liên hệ</a></li>
 					  </ul>
 					</div><!-- /.navbar-collapse -->
 				 
 				</nav>
 			</div>
-			<div class="wrapper">wrapper</div>
-			<div class="aside sidebar">aside</div>
-			<div class="footer">footer</div>
+			<div class="content container  animated fadeInLeftBig">
+				<div class="content-inner">
+					<div class="box-ads">
+						<div class="row no-margin">
+							<div class="ads col-md-6 col-xs-12">
+								<a href="/">
+									<img src="Content/front-end/images/ads.png" alt="Ads"/>
+								</a>
+							</div>
+							<div class="ads col-md-6 col-xs-12">
+								<a href="/">
+									<img src="Content/front-end/images/ads.png" alt="Ads"/>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="row no-margin">
+						<div class="col-md-8 col-xs-12">
+							<div class="wrapper">
+								<div class="portlet">
+									<div class="portlet-header">
+										<h3>
+											<i class="fa fa-cloud"></i>
+											Get link fshare, 4share, tenlua, tailieu.vn... <b class="color-red">MAX SPEED</b> and <b class="color-red">FREE</b>
+										</h3>
+									</div> 
+									<div class="portlet-content">
+										<form id="form-getlink">
+										<div class="box-validate alert alert-danger fade in hidden">
+											<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+											<div class="box-validate-msg"></div>
+										</div>
+											<div class="form-group">
+												<div class="input-group form-group">
+													<input class="form-control" id="urlGetLink" placeholder="Sao chép địa chỉ tải về vào đây | Mật khẩu (nếu có)" type="text">
+													<span class="input-group-btn">
+														<button type="button" class="btn btn-primary" id="btnGetlink">
+															<span >&nbsp;&nbsp; Get link <i class="fa fa-arrow-circle-right"></i></span>
+														</button>
+													</span>
+												</div>
+											</div>
+											<div class="overlay hide">
+												<div class="sk-cube-grid">
+												<div class="sk-cube sk-cube1"></div>
+												<div class="sk-cube sk-cube2"></div>
+												<div class="sk-cube sk-cube3"></div>
+												<div class="sk-cube sk-cube4"></div>
+												<div class="sk-cube sk-cube5"></div>
+												<div class="sk-cube sk-cube6"></div>
+												<div class="sk-cube sk-cube7"></div>
+												<div class="sk-cube sk-cube8"></div>
+												<div class="sk-cube sk-cube9"></div>
+												</div>
+											</div>
+											<div class="getlink-result">
+												<div class="form-group">
+													<div class="box-file-info">
+														<p class="text-primary">
+															<b>
+																Tên tệp tin:
+															</b>
+															<span class="file-info-film-name">
+																Bip Vuong 2000 (The Tricky Master) (1999).mkv
+															</span>
+														</p>
+														<p class="text-primary">
+															<b>
+																File size:
+															</b>
+															<span class="file-info-film-size">
+																1.5 GB
+															</span>
+														</p>
+													</div>
+													<div class="box-notification">
+														<p class="text-danger">
+															<b>
+																Do đang thiếu kinh phí để duy trì host get ! Nên mình đặt 1 link quảng cáo ! Các bạn thông cảm đợi 5s và sau đó click SKIP AD để ủng hộ mình tiếp tục duy trì nha !
+															</b>
+														</p>
+													</div>
+													<div class="input-group form-group">
+														<input class="form-control" id="urlGetLinkResult" type="text">
+														<span class="input-group-btn">
+															<a id="btnDownload" href="/" target="_blank">
+																<button type="button" class="btn btn-primary">
+																	<span>Download <i class="glyphicon glyphicon-download"></i></span>
+																</button>
+															</a>
+														</span>
+													</div>
+													<div class="box-introduction-ads-ouo">
+														<hr>
+														<h3>Hướng dẫn bỏ qua quảng cáo link <b style="color:#f06060">Ouo.io</b></h3>
+														<hr>
+														Tích vào ô <b style="color:#f06060">Tôi không phải là người máy</b> và xác nhận hình ảnh <br>
+														<img src="content/front-end/images/ouo1.png" alt="Hướng dẫn bỏ qua quảng cáo ouo bước 1">
+														<hr>
+														Click chuột phải vào nút <b style="color:#f06060">Get link</b> và chọn <b style="color:#f06060">Mở link trong Tab mới</b> <br>
+														<img src="content/front-end/images/ouo2.png" alt="Hướng dẫn bỏ qua quảng cáo ouo bước 2">
+														<hr>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<div class="aside sidebar">
+								<div class="portlet">
+									<div class="portlet-header">
+										<h3>
+											<i class="fa fa-paw"></i>
+											Hướng dẫn bỏ qua quảng cáo
+										</h3>
+									</div>  
+									<div class="portlet-content portlet-ads">
+										<a href="/" rel="nofollow" target="_blank">
+											<i class="fa fa-paw"></i>
+											Ouo.io 
+											<img src="content/front-end/images/ouo.png">
+										</a>
+										<br>
+										<a href="/" rel="nofollow" target="_blank">
+											<img src="content/front-end/images/bc.ico">
+											Bc.vc 
+											<img src="content/front-end/images/bc.png">
+										</a>
+										<br>
+										<a href="/" rel="nofollow" target="_blank">
+											<img src="content/front-end/images/linkshrink.ico">
+											Lshrink
+											<img src="content/front-end/images/linkshrink.png">
+										</a>
+										<br>
+										<a href="/" rel="nofollow" target="_blank">
+											<img src="content/front-end/images/adf.ico">
+											Adf.ly 
+											<img src="content/front-end/images/adf.png">
+										</a>
+										<br>
+										<a href="/" rel="nofollow" target="_blank">
+											<img src="content/front-end/images/linkbucks.ico">
+											Lbucks 
+											<img src="content/front-end/images/linkbucks.png">
+										</a>
+										<br>
+										<div class="portlet-footer">
+											Click 
+											<i class="fa fa-hand-o-up"></i> 
+											để đăng kí các dịch vụ rút gọn link và kiếm tiền 
+											<i class="fa fa-dollar"></i> 
+											<i class="fa fa-dollar"></i> 
+											<i class="fa fa-dollar"></i> 
+											cùng Get Link Pro</div>
+									</div>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				Copyright © 2016 by GetLinkPro.com
+			</div>
 		</div>
 	</body>
 	<!-- SCRIPTS BEGIN -->

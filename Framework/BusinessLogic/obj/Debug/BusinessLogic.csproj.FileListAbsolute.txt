@@ -4,3 +4,9 @@ D:\Document\GetLink\mvc5-web-framework\Framework\Web\bin\BusinessLogic.pdb
 D:\Document\GetLink\mvc5-web-framework\Framework\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 D:\Document\GetLink\mvc5-web-framework\Framework\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\Document\GetLink\mvc5-web-framework\Framework\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\Project\2015\get-link\Framework\Web\bin\BusinessLogic.dll.config
+D:\Project\2015\get-link\Framework\Web\bin\BusinessLogic.dll
+D:\Project\2015\get-link\Framework\Web\bin\BusinessLogic.pdb
+D:\Project\2015\get-link\Framework\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Project\2015\get-link\Framework\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\Project\2015\get-link\Framework\BusinessLogic\obj\Debug\BusinessLogic.pdb

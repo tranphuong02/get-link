@@ -1,0 +1,131 @@
+.content{
+	background: #fff;
+	padding-left: 0;
+	padding-right: 0;
+	-webkit-box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+}
+.content-inner{
+	margin-top: -140px;
+    background: #fff;
+	-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+	border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+	background: #fff;
+}
+
+.ads{
+	text-align: center;
+	padding: 15px 15px 0 15px;
+}
+
+.ads img{
+	width: 100%;
+}
+
+/* wrapper */
+.wrapper{
+	margin-top: 30px;
+}
+
+#form-getlink input,
+#form-getlink button{
+	height: 38px;
+}
+
+.getlink-result{
+	margin-top: 20px;
+}
+
+.box-file-info p,
+.box-notification p{
+	text-align: center;
+}
+
+.box-introduction-ads-ouo{
+	text-align: center; 
+	padding: 10px 0px 5px; 
+	overflow: hidden;
+}
+.box-introduction-ads-ouo img{
+	max-width:464px; 
+	width:70%;
+}
+
+#btnDownload button{
+	border-bottom-left-radius: 0!important;
+    border-top-left-radius: 0!important;
+}
+
+/* side bar */
+.sidebar{
+	margin-top: 30px;
+}
+
+.portlet {
+    position: relative;
+    clear: both;
+    width: auto;
+    margin-bottom: 2em;
+	border: 1px solid #d5d5d5;
+    -webkit-border-radius: 4px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 4px;
+    -moz-background-clip: padding;
+    border-radius: 4px;
+    background-clip: padding-box;
+}
+
+.portlet-header {
+    padding: 0px 15px;
+    background-color: #8ccb54;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.portlet-header h3{
+    padding: 10px 0;
+    margin: 0 1em 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.portlet-content{
+	padding: 22px 15px;
+    background: #FFF;
+	position: relative;
+}
+
+.portlet-ads a:hover{
+	text-decoration: none;
+}
+
+.portlet-ads{
+	line-height:50px
+}
+
+.portlet-ads a img:first-child{
+	width: 16px;
+	height: 16px;
+}
+
+.portlet-ads a img:last-child{
+	position: absolute;
+    right: 20px;
+    width: 180px;
+	vertical-align: middle;
+}
+
+.portlet-footer{
+	line-height: 25px;
+	margin-top: 5px;
+}

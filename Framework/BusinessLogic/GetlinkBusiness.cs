@@ -55,6 +55,12 @@ namespace BusinessLogic
             return input == null ? "" : input.Attributes["value"].Value;
         }
 
+        private string GetLinkCode(HtmlDocument document)
+        {
+            var input = document.DocumentNode.Descendants("input").FirstOrDefault(x => x.Attributes != null && x.Attributes.Any(y => y.Value == Constants.FShare.LinkCodeName));
+            return input == null ? "" : input.Attributes["value"].Value;
+        }
+
         public BaseModel Getlink(GetlinkParamViewModel viewModel)
         {
             try
@@ -71,16 +77,28 @@ namespace BusinessLogic
                         Message = "Limited free request"
                     };
                 }
+                // Init get link type
+                InitGetLinkType(viewModel);
+
                 switch (viewModel.Type)
                 {
                     case (int)GetlinkType.FShare:
                         {
                             var data = GetFShareLink(viewModel.Url, viewModel.Password, getable.TotalRequestToday, getable.IsRequiredAds);
+                            if (data != null)
+                            {
+                                return new BaseModel
+                                {
+                                    IsSuccess = true,
+                                    ErrorCode = (int) HttpStatusCode.OK,
+                                    Data = data
+                                };
+                            }
                             return new BaseModel
                             {
-                                IsSuccess = true,
-                                ErrorCode = (int)HttpStatusCode.OK,
-                                Data = data
+                                IsSuccess = false,
+                                ErrorCode = (int)HttpStatusCode.BadRequest,
+                                Message = "Không kết nối được tới host, bạn vui lòng thử lại sau"
                             };
                         }
                 }
@@ -94,22 +112,28 @@ namespace BusinessLogic
             {
                 IsSuccess = false,
                 ErrorCode = (int)HttpStatusCode.BadRequest,
-                Message = "Internal server error"
+                Message = "Không kết nối được tới host, bạn vui lòng thử lại sau"
             };
         }
 
         public FShareResultViewModel GetFShareLink(string url, string password, int totalRequestToday, bool isRequiredAds)
         {
             var cookieContainer = new CookieContainer();
+            var linkCode = string.Empty;
             var htmlDocument = new HtmlDocument();
 
             // Login
-            var csrf = GetFsCsrf(url, ref cookieContainer, ref htmlDocument);
+            var csrf = GetFsCsrf(url, ref cookieContainer, ref htmlDocument, ref linkCode);
             Login(csrf, ref cookieContainer);
 
             // Download
-            csrf = GetFsCsrf(url, ref cookieContainer, ref htmlDocument);
-            var result = DownloadFile(csrf, cookieContainer);
+            csrf = GetFsCsrf(url, ref cookieContainer, ref htmlDocument, ref linkCode);
+            var result = DownloadFile(csrf, linkCode, cookieContainer);
+
+            if (result.url == null)
+            {
+                return null;
+            }
 
             RewriteUrl(result);
 
@@ -154,12 +178,16 @@ namespace BusinessLogic
 
             #endregion
 
+            result.file_name = userRequest.ResultName;
+            result.file_size = userRequest.ResultSize;
+            result.url = "";
+
             return result;
         }
 
         #region Helper Methods
 
-        private string GetFsCsrf(string url, ref CookieContainer cookies, ref HtmlDocument document)
+        private string GetFsCsrf(string url, ref CookieContainer cookies, ref HtmlDocument document, ref string linkCode)
         {
             string html;
 
@@ -179,6 +207,7 @@ namespace BusinessLogic
             response.Close();
 
             document = HtmlDocument(html);
+            linkCode = GetLinkCode(document);
             return GetFsCsrf(document);
         }
 
@@ -191,9 +220,9 @@ namespace BusinessLogic
             response.Close();
         }
 
-        private FShareResultViewModel DownloadFile(string csrf, CookieContainer cookies)
+        private FShareResultViewModel DownloadFile(string csrf, string linkCode, CookieContainer cookies)
         {
-            var postData = string.Format(Constants.FShare.RequestDownloadParams, csrf);
+            var postData = string.Format(Constants.FShare.RequestDownloadParams, csrf, linkCode);
             var request = InitPost(cookies, Constants.FShare.GetFileUrl, postData);
             var response = (HttpWebResponse)request.GetResponse();
             var responseStream = response.GetResponseStream();
@@ -285,6 +314,15 @@ namespace BusinessLogic
             }
         }
 
+        private void InitGetLinkType(GetlinkParamViewModel viewModel)
+        {
+            if (viewModel.Url.Contains("fshare.vn"))
+            {
+                viewModel.Type = (int) GetlinkType.FShare;
+                return;
+            }
+        }
+
         private void RewriteUrl(FShareResultViewModel viewModel)
         {
             try
@@ -312,7 +350,7 @@ namespace BusinessLogic
                     GenerateOuoAds(viewModel, downloadLink);
                 }
                 // adf ly
-                else if (totalRequestToday < 6)
+                else //if (totalRequestToday < 6)
                 {
                     viewModel.ads_type = (int)AdsType.Adf;
                     viewModel.ads_introduction = BackendHelpers.AdfIntroduction;
@@ -344,12 +382,36 @@ namespace BusinessLogic
 
         private void GenerateOuoAds(FShareResultViewModel viewModel, string downloadUrl)
         {
-            viewModel.ads_url = BackendHelpers.OuoUrl + downloadUrl;
+            var adsUrl = BackendHelpers.OuoUrl + downloadUrl;
+            var request = (HttpWebRequest)WebRequest.Create(adsUrl);
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseStream = response.GetResponseStream();
+            if (responseStream == null) return;
+
+            using (var stream = new StreamReader(responseStream))
+            {
+                var htmlDocument = HtmlDocument(stream.ReadToEnd());
+
+                viewModel.ads_url = htmlDocument.DocumentNode.InnerText;
+            }
+            response.Close();
         }
 
         private void GenerateAdfAds(FShareResultViewModel viewModel, string downloadUrl)
         {
-            viewModel.ads_url = BackendHelpers.AdfUrl + downloadUrl;
+            var adsUrl = BackendHelpers.AdfUrl + downloadUrl;
+             var request = (HttpWebRequest)WebRequest.Create(adsUrl);
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseStream = response.GetResponseStream();
+            if (responseStream == null) return;
+
+            using (var stream = new StreamReader(responseStream))
+            {
+                var htmlDocument = HtmlDocument(stream.ReadToEnd());
+
+                viewModel.ads_url = htmlDocument.DocumentNode.InnerText;
+            }
+            response.Close();
         }
 
         #endregion Helper Methods

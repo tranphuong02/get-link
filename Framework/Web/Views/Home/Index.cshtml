@@ -1,61 +1,164 @@
-﻿@{
+﻿@using Transverse.Enums
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="box_getlink" class="portlet" style="margin-bottom: 1.3em">
-    <div class="portlet-header">
-        <h3>
-            <i class="fa fa-cloud"></i>
-            Tool Get link Fshare, 4share, Tenlua, Tailieu.vn,... Get link VIP Max Speed, Get link tốc độ cao
-        </h3>
-    </div>
-    <div class="portlet-content">
-        <div class="alert alert-danger" id="c-alert" style="margin-top: 0px; word-wrap: break-word; display: none;">
-            <i class="fa fa-warning" id="icon-error"></i> <span id="c-error-mess"></span>
-        </div>
-        <div class="form-group">
-            <div class="input-group form-group">
-                <input class="form-control" style="height: 38px; z-index: 0" id="inputLinkget" placeholder="Sao chép địa chỉ tải về vào đây | Mật khẩu (nếu có)" type="text">
-                <span id="span_pass" class="input-group-addon" style="display: none; border-left: 0; border-right: 0;"><i style="width: 14px; height: 14px;" class="fa fa-lock fa-lg"></i></span>
-                <input id="input_pass" class="form-control" style="display: none; height: 38px; z-index: 0" id="pass" placeholder="Nhập mật khẩu tải về" type="text"/>
-                <span class="input-group-btn">
-                    <button class="btn btn-secondary" style="height: 38px;" id="getlink" type="button"><span id="text_link">Get link <i class="fa fa-arrow-circle-right"></i></span></button>
-                </span>
+<div class="col-md-8 col-xs-12">
+    <div class="wrapper">
+        <div class="portlet">
+            <div class="portlet-header">
+                <h3>
+                    <i class="fa fa-cloud"></i>
+                    Get link fshare, 4share, tenlua, tailieu.vn... <b class="color-red">MAX SPEED</b> and <b class="color-red">FREE</b>
+                </h3>
+            </div>
+            <div class="portlet-content">
+                <form id="form-getlink" method="POST">
+                    <div class="box-validate alert alert-danger fade in hidden">
+                        <a href="#" class="close" onclick="hideBoxValidate()" aria-label="close" title="close">×</a>
+                        <div class="box-validate-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group form-group">
+                            <input class="form-control" id="Url" name="Url" placeholder="Sao chép địa chỉ tải về vào đây | Mật khẩu (nếu có)" type="text">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary ladda-button" data-style="expand-left" id="btnGetlink">
+                                    <span class="ladda-label">
+                                        <span>&nbsp;&nbsp; Get link <i class="fa fa-arrow-circle-right"></i></span>
+                                    </span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="overlay hide">
+                        <div class="sk-cube-grid">
+                            <div class="sk-cube sk-cube1"></div>
+                            <div class="sk-cube sk-cube2"></div>
+                            <div class="sk-cube sk-cube3"></div>
+                            <div class="sk-cube sk-cube4"></div>
+                            <div class="sk-cube sk-cube5"></div>
+                            <div class="sk-cube sk-cube6"></div>
+                            <div class="sk-cube sk-cube7"></div>
+                            <div class="sk-cube sk-cube8"></div>
+                            <div class="sk-cube sk-cube9"></div>
+                        </div>
+                    </div>
+                    <div class="getlink-result hidden">
+                        <div class="form-group">
+                            <div class="box-file-info">
+                                <p class="text-primary">
+                                    <b>
+                                        Tên tệp tin:
+                                    </b>
+                                    <span class="file-info-film-name"></span>
+                                </p>
+                                <p class="text-primary">
+                                    <b>
+                                        File size:
+                                    </b>
+                                    <span class="file-info-film-size"></span>
+                                </p>
+                            </div>
+                            <div class="box-notification hidden">
+                                <p class="text-danger">
+                                    <b>
+                                        Do đang thiếu kinh phí để duy trì host get ! Nên mình đặt 1 link quảng cáo ! Các bạn thông cảm đợi 5s và sau đó click SKIP AD để ủng hộ mình tiếp tục duy trì nha !
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="box-notification-ouo hidden">
+                                <p class="text-danger">
+                                    <b>
+                                        Do đang thiếu kinh phí để duy trì host get ! Nên mình đặt 1 link quảng cáo ! Các bạn thông cảm làm theo hướng dẫn bên dưới để ủng hộ mình tiếp tục duy trì nha !
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="input-group form-group">
+                                <input class="form-control" id="urlGetLinkResult" type="text">
+                                <span class="input-group-btn">
+                                    <a id="btnDownload" href="/" target="_blank">
+                                        <button type="button" class="btn btn-primary">
+                                            <span>Download <i class="glyphicon glyphicon-download"></i></span>
+                                        </button>
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="box-introduction-ads-ouo hidden">
+                                <hr>
+                                <h3>Hướng dẫn bỏ qua quảng cáo link <b style="color:#f06060">Ouo.io</b></h3>
+                                <hr>
+                                Tích vào ô <b style="color:#f06060">Tôi không phải là người máy</b> và xác nhận hình ảnh <br>
+                                <img src="/content/front-end/images/ouo1.png" alt="Hướng dẫn bỏ qua quảng cáo ouo bước 1">
+                                <hr>
+                                Click chuột phải vào nút <b style="color:#f06060">Get link</b> và chọn <b style="color:#f06060">Mở link trong Tab mới</b> <br>
+                                <img src="/content/front-end/images/ouo2.png" alt="Hướng dẫn bỏ qua quảng cáo ouo bước 2">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div id="getlink_result" class="form-group">
-            <div style="text-align: center; font-weight: bold; word-wrap: break-word; margin-top: 10px; margin-bottom: 0px;">
-                <div id="file_info" style="padding: 10px 0 5px 0; display: none;"></div>
-                <div id="live" style="padding: 10px 0 15px 0; display: none;"> Do đang thiếu kinh phí để duy trì host get ! Nên mình đặt 1 link quảng cáo ! Các bạn thông cảm đợi 5s click SKIP AD để ủng hộ mình tiếp tục duy trì nha !</div>
-                <div id="proxy_info" style="padding: 15px 0 15px 0; display: none;">Bạn phải thêm proxy <font id="proxy" color="red"></font> vào IDM trước khi Download
+    </div>
+</div>
+<div class="col-md-4 col-xs-12">
+    <div class="aside sidebar">
+        <div class="portlet">
+            <div class="portlet-header">
+                <h3>
+                    <i class="fa fa-paw"></i>
+                    Hướng dẫn bỏ qua quảng cáo
+                </h3>
+            </div>
+            <div class="portlet-content portlet-ads">
+                <a href="/" rel="nofollow" target="_blank">
+                    <i class="fa fa-paw"></i>
+                    Ouo.io
+                    <img src="/content/front-end/images/ouo.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/bc.ico">
+                    Bc.vc
+                    <img src="/content/front-end/images/bc.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/linkshrink.ico">
+                    Lshrink
+                    <img src="/content/front-end/images/linkshrink.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/adf.ico">
+                    Adf.ly
+                    <img src="/content/front-end/images/adf.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/linkbucks.ico">
+                    Lbucks
+                    <img src="/content/front-end/images/linkbucks.png">
+                </a>
+                <br>
+                <div class="portlet-footer">
+                    Click
+                    <i class="fa fa-hand-o-up"></i>
+                    để đăng kí các dịch vụ rút gọn link và kiếm tiền
+                    <i class="fa fa-dollar"></i>
+                    <i class="fa fa-dollar"></i>
+                    <i class="fa fa-dollar"></i>
+                    cùng Get Link Pro
                 </div>
             </div>
-            <div id="form_down" style="padding: 10px 0 10px 0; display: none;" class="input-group">
-                <span id="copy-link" class="input-group-addon"><i class="fa fa-cut"></i></span>
-                <input style="background-color: #F8F8F8;" onclick=" $(this).select(); " class="form-control" id="inputLink" type="text" readonly>
-                <span class="input-group-btn">
-                    <a id="a_down"><button id="down" style="border-bottom-left-radius: 0 !important; border-top-left-radius: 0 !important;" class="btn btn-secondary" type="button">Tải xuống <i class="fa fa-download"></i></button></a>
-                </span>
-            </div>
-            <div id="ouo" style="text-align: center; padding: 10px 0 5px 0; display: none;">
-                <hr>
-                <h3>Hướng dẫn bỏ qua quảng cáo link <b style="color: #f06060">Ouo.io</b>
-                </h3>
-                <hr>
-                Tích vào ô <b style="color: #f06060">Tôi không phải là người máy</b> và xác nhận hình ảnh <br/>
-                <img src="/content/front-end/images/clickads/ouo1.png" style="max-width: 464px" width="70%" height="70%">
-                <hr>
-                Click chuột phải vào nút <b style="color: #f06060">Get link</b> và chọn <b style="color: #f06060">Mở link trong Tab mới</b> <br/>
-                <img src="/content/front-end/images/clickads/ouo2.png" style="max-width: 381px" width="70%" height="70%">
-                <hr>
-            </div>
         </div>
-        <div id="option_result" class="form-group"></div>
     </div>
 </div>
 
 @section scripts
 {
+    <script src="/Scripts/front-end/jquery.validate.min.js"></script>
+    <script src="/Scripts/front-end/jquery.validate.unobtrusive.min.js"></script>
     <script>
         @functions{
             public string TokenHeaderValue()
@@ -66,28 +169,133 @@
             }
         }
 
-        var $inputLinkget,
-            $btnGetlink;
+        var $getLinkForm,
+            $url,
+            $btnGetlink,
+            $boxValidate,
+            $boxValidateMsg,
+            $getLinkResult,
+            $fileName,
+            $fileSize,
+            $boxNotification,
+            $boxNotificationOuo,
+            $urlGetLinkResult,
+            $btnDownload,
+            $boxAdsOuo
+        ;
+
         $(document).ready(function() {
-            $inputLinkget = $('#inputLinkget');
-            $btnGetlink = $('#getlink');
+            $getLinkForm = $('#form-getlink');
+            $url = $('#Url');
+            $btnGetlink = $('#btnGetlink');
+            $boxValidate = $('.box-validate');
+            $boxValidateMsg = $('.box-validate-msg');
+            $getLinkResult = $('.getlink-result');
+            $fileName = $('.file-info-film-name');
+            $fileSize = $('.file-info-film-size');
+            $boxNotification = $('.box-notification');
+            $boxNotificationOuo = $('.box-notification-ouo');
+            $urlGetLinkResult = $('#urlGetLinkResult');
+            $btnDownload = $('#btnDownload');
+            $boxAdsOuo = $('.box-introduction-ads-ouo');
+
+            var getLinkFormValidation = $getLinkForm.validate({
+                /// <summary>
+                /// Setup validate for add user form
+                /// </summary>
+                ignore: ":disabled",
+                rules: {
+                    "Url": {
+                        required: true,
+                        url: true
+                    }
+                },
+                messages: {
+                    "Url": {
+                        required: "Chẳng có gì để get cả. Bạn phải nhập cái gì vào chứ ?",
+                        url: "Link không hợp lệ ! Xem các host GetLinkPro hỗ trợ get link tại đây"
+                    }
+                },
+                errorElement: 'div',
+                errorPlacement: function (error, element) {
+                    error.appendTo('.box-validate-msg');
+                }
+            });
 
             $btnGetlink.on('click', function() {
-                $.ajax("/api/getlink/v1", {
-                    type: "post",
-                    contentType: "application/json",
-                    data: {
-                        "Token": "bbb",
+                var isValidData = $getLinkForm.valid();
+                if (!isValidData) {
+                    showBoxValidate();
+                    getLinkFormValidation.focusInvalid();
+                } else {
+                    hideBoxValidate();
+
+                    var data = {
                         "Type": 1,
-                        "Url": "https://www.fshare.vn/file/T0R2T7630T/",
-                        "Password": ""
-                    },
-                    dataType: "json",
-                    headers: {
-                        'RequestVerificationToken': '@TokenHeaderValue()'
-                    }
-                });
+                        "Url": $url.val(),
+                        "Password": "",
+                        "CustomerId": null,
+                        "CustomerType": 0
+                    };
+
+                    $.ajax({
+                        url: "/api/getlink/v1",
+                        headers: {
+                            'RequestVerificationToken': '@TokenHeaderValue()'
+                        },
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(data),
+                        success: function (response) {
+                            if (response.IsSuccess) {
+                                showGetLinkResult(response.Data);
+                            } else {
+                                var $err = $('<div class="error">' + response.Message + '</div>');
+                                $boxValidateMsg.html('');
+                                $boxValidateMsg.append($err);
+                                $boxValidate.removeClass('hidden');
+                            }
+                        },
+                        error: function (response) {
+                            console.log(response);
+                            alert("error");
+                        },
+                        complete: function (response) {
+                            $url.attr('placeholder', $url.val());
+                            $url.val('');
+                            alert("complete");
+                        }
+                    });
+                }
             });
         });
+
+        function showBoxValidate() {
+            $boxValidate.removeClass('hidden');
+        }
+
+        function hideBoxValidate() {
+            $boxValidate.addClass('hidden');
+            $boxValidateMsg.html('');
+        }
+
+        function showGetLinkResult(object) {
+            $getLinkResult.removeClass('hidden');
+
+            $fileName.html(object.file_name+"");
+            $fileSize.html(object.file_size + "");
+            $urlGetLinkResult.val(object.ads_url);
+            $btnDownload.attr('href', object.ads_url);
+            if(object.ads_type === (@((int)AdsType.Ouo))) {
+                $boxNotification.addClass('hidden');
+                $boxNotificationOuo.removeClass('hidden');
+                $boxAdsOuo.removeClass('hidden');
+            }else {
+                $boxNotification.removeClass('hidden');
+                $boxNotificationOuo.addClass('hidden');
+                $boxAdsOuo.addClass('hidden');
+            }
+        }
     </script>
 }

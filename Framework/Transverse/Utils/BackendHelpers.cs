@@ -12,7 +12,7 @@ namespace Transverse.Utils
 {
     public static class BackendHelpers
     {
-        public static int FreeRequestNumber => 10;
+        public static int FreeRequestNumber => 100;
         public static string RootUrl => ConfigurationManager.AppSettings["RootUrl"];
         public static string OuoUrl => ConfigurationManager.AppSettings["OuoUrl"];
         public static string AdfUrl => ConfigurationManager.AppSettings["AdfUrl"];

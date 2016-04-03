@@ -1,6 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
 using System.Web.Http;
-using Transverse.Attributes;
 using Transverse.Interfaces.Business;
 using Transverse.Models.Business.Getlink;
 
@@ -14,8 +13,8 @@ namespace Web.Controllers.API
 
         [HttpPost]
         [Route("v1")]
-        [ValidateAntiForgeryToken]
-        public IHttpActionResult GetLink(GetlinkParamViewModel viewModel)
+        //[Transverse.Attributes.ValidateAntiForgeryToken]
+        public IHttpActionResult GetLink([FromBody]GetlinkParamViewModel viewModel)
         {
             if (ModelState.IsValid == false)
             {
