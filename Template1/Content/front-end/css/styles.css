@@ -1,0 +1,29 @@
+body{
+    font: 400 14px/1.6 'Open Sans',Verdana,Helvetica,sans-serif;
+    background: #FFF;
+}
+
+.main-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+.main-container > * {
+	flex: 1 100%;
+	/* padding: 0 15px; */
+}
+.header{
+	order: 0;
+}
+.wrapper{
+	order: 1;
+	flex: 2 auto;
+}
+.sidebar{
+	order: 2;
+}
+.footer{
+	order: 3;
+}
+.aside{
+	flex: 1 auto;
+}
