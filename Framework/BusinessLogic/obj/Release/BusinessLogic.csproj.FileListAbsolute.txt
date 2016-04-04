@@ -4,3 +4,9 @@ D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\BusinessLogi
 D:\Document\GetLink\mvc5-web-framework\Framework\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
 D:\Document\GetLink\mvc5-web-framework\Framework\BusinessLogic\obj\Release\BusinessLogic.dll
 D:\Document\GetLink\mvc5-web-framework\Framework\BusinessLogic\obj\Release\BusinessLogic.pdb
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\BusinessLogic.dll.config
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\BusinessLogic.dll
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\BusinessLogic.pdb
+D:\Project\2015\get-link\Framework\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Project\2015\get-link\Framework\BusinessLogic\obj\Release\BusinessLogic.dll
+D:\Project\2015\get-link\Framework\BusinessLogic\obj\Release\BusinessLogic.pdb

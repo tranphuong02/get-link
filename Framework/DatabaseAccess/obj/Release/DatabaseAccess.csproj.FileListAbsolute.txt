@@ -4,3 +4,14 @@ D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\DatabaseAcce
 D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Release\DatabaseAccess.csprojResolveAssemblyReference.cache
 D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Release\DatabaseAccess.dll
 D:\Document\GetLink\mvc5-web-framework\Framework\DatabaseAccess\obj\Release\DatabaseAccess.pdb
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\DatabaseAccess.dll.config
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\DatabaseAccess.dll
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\DatabaseAccess.pdb
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.csprojResolveAssemblyReference.cache
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.Migrations.InitialDatabase.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.Migrations.AddTableBlackList.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.Migrations.UpdateDatabase.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.Migrations.UpdateDatabase1.resources
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.csproj.GenerateResource.Cache
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.dll
+D:\Project\2015\get-link\Framework\DatabaseAccess\obj\Release\DatabaseAccess.pdb

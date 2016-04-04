@@ -1,0 +1,71 @@
+.header {
+	z-index: 9999;
+    background: #8ccb54;
+    min-height: 40px;
+	padding-bottom: 150px;
+    -webkit-transition: all .3s ease-out 0s;
+    -moz-transition: all .3s ease-out 0s;
+    -o-transition: all .3s ease-out 0s;
+    transition: all .3s ease-out 0s;
+}
+
+.header .navbar-toggle{
+	background: #fff;
+}
+
+.header .navbar-toggle .icon-bar{
+	background: #ccc;
+}
+
+.header  .navbar{
+	margin-bottom: 5px;
+}
+
+.header .navbar-brand{
+	font-weight: 700;
+	text-shadow: 1px 1px 0 #2b4513;
+	font-size: 18px;
+	color: #fff;
+    line-height: 16px;
+    padding: 27px 20px 0px 10px;
+	text-transform: uppercase;
+}
+
+.header .nav>li{
+	line-height: 16px;
+    margin: 5px 9px 0 0;
+    padding: 8px 20px 8px 10px;
+}
+.header .nav>li>a{
+	font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 0 #2b4513;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 13px 0px 14px;
+    text-transform: uppercase;
+}
+
+.header .nav>li>a:hover{
+	font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 0 #2b4513;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 13px 0px 14px;
+    text-transform: uppercase;
+}
+.header .nav>li:hover,
+.header .nav>li:focus,
+.header .nav>li.active{
+	line-height: 16px;
+    margin: 5px 9px 0 0;
+    padding: 8px 20px 8px 10px;
+    background: #6da23d;
+    border-radius: 3px;
+}
+
+.header .nav>li>a:focus, 
+.header .nav>li>a:hover {
+    background: none;
+}

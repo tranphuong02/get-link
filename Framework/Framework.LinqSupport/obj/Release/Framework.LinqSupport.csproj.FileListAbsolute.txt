@@ -2,3 +2,8 @@ D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\bin\Relea
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\bin\Release\Framework.LinqSupport.pdb
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Release\Framework.LinqSupport.dll
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Release\Framework.LinqSupport.pdb
+D:\Project\2015\get-link\Framework\Framework.LinqSupport\bin\Release\Framework.LinqSupport.dll
+D:\Project\2015\get-link\Framework\Framework.LinqSupport\bin\Release\Framework.LinqSupport.pdb
+D:\Project\2015\get-link\Framework\Framework.LinqSupport\obj\Release\Framework.LinqSupport.csprojResolveAssemblyReference.cache
+D:\Project\2015\get-link\Framework\Framework.LinqSupport\obj\Release\Framework.LinqSupport.dll
+D:\Project\2015\get-link\Framework\Framework.LinqSupport\obj\Release\Framework.LinqSupport.pdb

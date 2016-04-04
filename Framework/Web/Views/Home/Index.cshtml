@@ -22,7 +22,7 @@
                         <div class="input-group form-group">
                             <input class="form-control" id="Url" name="Url" placeholder="Sao chép địa chỉ tải về vào đây | Mật khẩu (nếu có)" type="text">
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-primary ladda-button" data-style="expand-left" id="btnGetlink">
+                                <button type="button" class="btn btn-primary ladda-button" data-style="expand-left" s id="btnGetlink">
                                     <span class="ladda-label">
                                         <span>&nbsp;&nbsp; Get link <i class="fa fa-arrow-circle-right"></i></span>
                                     </span>
@@ -30,7 +30,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="overlay hide">
+                    <div class="overlay hidden">
                         <div class="sk-cube-grid">
                             <div class="sk-cube sk-cube1"></div>
                             <div class="sk-cube sk-cube2"></div>
@@ -181,7 +181,8 @@
             $boxNotificationOuo,
             $urlGetLinkResult,
             $btnDownload,
-            $boxAdsOuo
+            $boxAdsOuo,
+            $overlay
         ;
 
         $(document).ready(function() {
@@ -198,6 +199,7 @@
             $urlGetLinkResult = $('#urlGetLinkResult');
             $btnDownload = $('#btnDownload');
             $boxAdsOuo = $('.box-introduction-ads-ouo');
+            $overlay = $('.overlay');
 
             var getLinkFormValidation = $getLinkForm.validate({
                 /// <summary>
@@ -222,13 +224,35 @@
                 }
             });
 
+            $url.on('change', function() {
+                var isValidData = $getLinkForm.valid();
+                if (isValidData) {
+                    hideBoxValidate();
+                }
+            });
+
+            $url.on('paste', function() {
+                console.log(2);
+
+                setTimeout(function () {
+                    var isValidData = $getLinkForm.valid();
+                    if (isValidData) {
+                        hideBoxValidate();
+                    }
+                }, 100);
+
+            });
+
             $btnGetlink.on('click', function() {
                 var isValidData = $getLinkForm.valid();
                 if (!isValidData) {
                     showBoxValidate();
                     getLinkFormValidation.focusInvalid();
                 } else {
+                    $btnGetlink.addClass('disabled');
+                    showOverlay();
                     hideBoxValidate();
+                    hideGetlinkResult();
 
                     var data = {
                         "Type": 1,
@@ -264,7 +288,8 @@
                         complete: function (response) {
                             $url.attr('placeholder', $url.val());
                             $url.val('');
-                            alert("complete");
+                            hideOverlay();
+                            $btnGetlink.removeClass('disabled');
                         }
                     });
                 }
@@ -296,6 +321,26 @@
                 $boxNotificationOuo.addClass('hidden');
                 $boxAdsOuo.addClass('hidden');
             }
+        }
+
+        function hideGetlinkResult() {
+            $fileName.html("");
+            $fileSize.html("");
+            $urlGetLinkResult.val("");
+            $btnDownload.attr('href', "");
+            $getLinkResult.addClass('hidden');
+            $boxAdsOuo.addClass('hidden');
+            $boxNotification.addClass('hidden');
+            $boxNotificationOuo.addClass('hidden');
+            $boxAdsOuo.addClass('hidden');
+        }
+
+        function showOverlay() {
+            $overlay.removeClass('hidden');
+        }
+
+        function hideOverlay() {
+            $overlay.addClass('hidden');
         }
     </script>
 }

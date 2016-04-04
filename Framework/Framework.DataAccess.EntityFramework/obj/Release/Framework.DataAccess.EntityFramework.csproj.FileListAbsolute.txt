@@ -4,3 +4,9 @@ D:\Document\GetLink\mvc5-web-framework\Framework\BreezeGoodlife\bin\Framework.Da
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.dll
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.pdb
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\Framework.DataAccess.EntityFramework.dll.config
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\Framework.DataAccess.EntityFramework.dll
+D:\Project\2015\get-link\Framework\BreezeGoodlife\bin\Framework.DataAccess.EntityFramework.pdb
+D:\Project\2015\get-link\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
+D:\Project\2015\get-link\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.dll
+D:\Project\2015\get-link\Framework\Framework.DataAccess.EntityFramework\obj\Release\Framework.DataAccess.EntityFramework.pdb

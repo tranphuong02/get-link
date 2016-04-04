@@ -1,24 +1,346 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+﻿@using Transverse.Enums
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-8 col-xs-12">
+    <div class="wrapper">
+        <div class="portlet">
+            <div class="portlet-header">
+                <h3>
+                    <i class="fa fa-cloud"></i>
+                    Get link fshare, 4share, tenlua, tailieu.vn... <b class="color-red">MAX SPEED</b> and <b class="color-red">FREE</b>
+                </h3>
+            </div>
+            <div class="portlet-content">
+                <form id="form-getlink" method="POST">
+                    <div class="box-validate alert alert-danger fade in hidden">
+                        <a href="#" class="close" onclick="hideBoxValidate()" aria-label="close" title="close">×</a>
+                        <div class="box-validate-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group form-group">
+                            <input class="form-control" id="Url" name="Url" placeholder="Sao chép địa chỉ tải về vào đây | Mật khẩu (nếu có)" type="text">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary ladda-button" data-style="expand-left" s id="btnGetlink">
+                                    <span class="ladda-label">
+                                        <span>&nbsp;&nbsp; Get link <i class="fa fa-arrow-circle-right"></i></span>
+                                    </span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="overlay hidden">
+                        <div class="sk-cube-grid">
+                            <div class="sk-cube sk-cube1"></div>
+                            <div class="sk-cube sk-cube2"></div>
+                            <div class="sk-cube sk-cube3"></div>
+                            <div class="sk-cube sk-cube4"></div>
+                            <div class="sk-cube sk-cube5"></div>
+                            <div class="sk-cube sk-cube6"></div>
+                            <div class="sk-cube sk-cube7"></div>
+                            <div class="sk-cube sk-cube8"></div>
+                            <div class="sk-cube sk-cube9"></div>
+                        </div>
+                    </div>
+                    <div class="getlink-result hidden">
+                        <div class="form-group">
+                            <div class="box-file-info">
+                                <p class="text-primary">
+                                    <b>
+                                        Tên tệp tin:
+                                    </b>
+                                    <span class="file-info-film-name"></span>
+                                </p>
+                                <p class="text-primary">
+                                    <b>
+                                        File size:
+                                    </b>
+                                    <span class="file-info-film-size"></span>
+                                </p>
+                            </div>
+                            <div class="box-notification hidden">
+                                <p class="text-danger">
+                                    <b>
+                                        Do đang thiếu kinh phí để duy trì host get ! Nên mình đặt 1 link quảng cáo ! Các bạn thông cảm đợi 5s và sau đó click SKIP AD để ủng hộ mình tiếp tục duy trì nha !
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="box-notification-ouo hidden">
+                                <p class="text-danger">
+                                    <b>
+                                        Do đang thiếu kinh phí để duy trì host get ! Nên mình đặt 1 link quảng cáo ! Các bạn thông cảm làm theo hướng dẫn bên dưới để ủng hộ mình tiếp tục duy trì nha !
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="input-group form-group">
+                                <input class="form-control" id="urlGetLinkResult" type="text">
+                                <span class="input-group-btn">
+                                    <a id="btnDownload" href="/" target="_blank">
+                                        <button type="button" class="btn btn-primary">
+                                            <span>Download <i class="glyphicon glyphicon-download"></i></span>
+                                        </button>
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="box-introduction-ads-ouo hidden">
+                                <hr>
+                                <h3>Hướng dẫn bỏ qua quảng cáo link <b style="color:#f06060">Ouo.io</b></h3>
+                                <hr>
+                                Tích vào ô <b style="color:#f06060">Tôi không phải là người máy</b> và xác nhận hình ảnh <br>
+                                <img src="/content/front-end/images/ouo1.png" alt="Hướng dẫn bỏ qua quảng cáo ouo bước 1">
+                                <hr>
+                                Click chuột phải vào nút <b style="color:#f06060">Get link</b> và chọn <b style="color:#f06060">Mở link trong Tab mới</b> <br>
+                                <img src="/content/front-end/images/ouo2.png" alt="Hướng dẫn bỏ qua quảng cáo ouo bước 2">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+<div class="col-md-4 col-xs-12">
+    <div class="aside sidebar">
+        <div class="portlet">
+            <div class="portlet-header">
+                <h3>
+                    <i class="fa fa-paw"></i>
+                    Hướng dẫn bỏ qua quảng cáo
+                </h3>
+            </div>
+            <div class="portlet-content portlet-ads">
+                <a href="/" rel="nofollow" target="_blank">
+                    <i class="fa fa-paw"></i>
+                    Ouo.io
+                    <img src="/content/front-end/images/ouo.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/bc.ico">
+                    Bc.vc
+                    <img src="/content/front-end/images/bc.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/linkshrink.ico">
+                    Lshrink
+                    <img src="/content/front-end/images/linkshrink.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/adf.ico">
+                    Adf.ly
+                    <img src="/content/front-end/images/adf.png">
+                </a>
+                <br>
+                <a href="/" rel="nofollow" target="_blank">
+                    <img src="/content/front-end/images/linkbucks.ico">
+                    Lbucks
+                    <img src="/content/front-end/images/linkbucks.png">
+                </a>
+                <br>
+                <div class="portlet-footer">
+                    Click
+                    <i class="fa fa-hand-o-up"></i>
+                    để đăng kí các dịch vụ rút gọn link và kiếm tiền
+                    <i class="fa fa-dollar"></i>
+                    <i class="fa fa-dollar"></i>
+                    <i class="fa fa-dollar"></i>
+                    cùng Get Link Pro
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+@section scripts
+{
+    <script src="/Scripts/front-end/jquery.validate.min.js"></script>
+    <script src="/Scripts/front-end/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        @functions{
+            public string TokenHeaderValue()
+            {
+                string cookieToken, formToken;
+                AntiForgery.GetTokens(null, out cookieToken, out formToken);
+                return cookieToken + ":" + formToken;
+            }
+        }
+
+        var $getLinkForm,
+            $url,
+            $btnGetlink,
+            $boxValidate,
+            $boxValidateMsg,
+            $getLinkResult,
+            $fileName,
+            $fileSize,
+            $boxNotification,
+            $boxNotificationOuo,
+            $urlGetLinkResult,
+            $btnDownload,
+            $boxAdsOuo,
+            $overlay
+        ;
+
+        $(document).ready(function() {
+            $getLinkForm = $('#form-getlink');
+            $url = $('#Url');
+            $btnGetlink = $('#btnGetlink');
+            $boxValidate = $('.box-validate');
+            $boxValidateMsg = $('.box-validate-msg');
+            $getLinkResult = $('.getlink-result');
+            $fileName = $('.file-info-film-name');
+            $fileSize = $('.file-info-film-size');
+            $boxNotification = $('.box-notification');
+            $boxNotificationOuo = $('.box-notification-ouo');
+            $urlGetLinkResult = $('#urlGetLinkResult');
+            $btnDownload = $('#btnDownload');
+            $boxAdsOuo = $('.box-introduction-ads-ouo');
+            $overlay = $('.overlay');
+
+            var getLinkFormValidation = $getLinkForm.validate({
+                /// <summary>
+                /// Setup validate for add user form
+                /// </summary>
+                ignore: ":disabled",
+                rules: {
+                    "Url": {
+                        required: true,
+                        url: true
+                    }
+                },
+                messages: {
+                    "Url": {
+                        required: "Chẳng có gì để get cả. Bạn phải nhập cái gì vào chứ ?",
+                        url: "Link không hợp lệ ! Xem các host GetLinkPro hỗ trợ get link tại đây"
+                    }
+                },
+                errorElement: 'div',
+                errorPlacement: function (error, element) {
+                    error.appendTo('.box-validate-msg');
+                }
+            });
+
+            $url.on('change', function() {
+                var isValidData = $getLinkForm.valid();
+                if (isValidData) {
+                    hideBoxValidate();
+                }
+            });
+
+            $url.on('paste', function() {
+                console.log(2);
+
+                setTimeout(function () {
+                    var isValidData = $getLinkForm.valid();
+                    if (isValidData) {
+                        hideBoxValidate();
+                    }
+                }, 100);
+
+            });
+
+            $btnGetlink.on('click', function() {
+                var isValidData = $getLinkForm.valid();
+                if (!isValidData) {
+                    showBoxValidate();
+                    getLinkFormValidation.focusInvalid();
+                } else {
+                    $btnGetlink.addClass('disabled');
+                    showOverlay();
+                    hideBoxValidate();
+                    hideGetlinkResult();
+
+                    var data = {
+                        "Type": 1,
+                        "Url": $url.val(),
+                        "Password": "",
+                        "CustomerId": null,
+                        "CustomerType": 0
+                    };
+
+                    $.ajax({
+                        url: "/api/getlink/v1",
+                        headers: {
+                            'RequestVerificationToken': '@TokenHeaderValue()'
+                        },
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(data),
+                        success: function (response) {
+                            if (response.IsSuccess) {
+                                showGetLinkResult(response.Data);
+                            } else {
+                                var $err = $('<div class="error">' + response.Message + '</div>');
+                                $boxValidateMsg.html('');
+                                $boxValidateMsg.append($err);
+                                $boxValidate.removeClass('hidden');
+                            }
+                        },
+                        error: function (response) {
+                            console.log(response);
+                            alert("error");
+                        },
+                        complete: function (response) {
+                            $url.attr('placeholder', $url.val());
+                            $url.val('');
+                            hideOverlay();
+                            $btnGetlink.removeClass('disabled');
+                        }
+                    });
+                }
+            });
+        });
+
+        function showBoxValidate() {
+            $boxValidate.removeClass('hidden');
+        }
+
+        function hideBoxValidate() {
+            $boxValidate.addClass('hidden');
+            $boxValidateMsg.html('');
+        }
+
+        function showGetLinkResult(object) {
+            $getLinkResult.removeClass('hidden');
+
+            $fileName.html(object.file_name+"");
+            $fileSize.html(object.file_size + "");
+            $urlGetLinkResult.val(object.ads_url);
+            $btnDownload.attr('href', object.ads_url);
+            if(object.ads_type === (@((int)AdsType.Ouo))) {
+                $boxNotification.addClass('hidden');
+                $boxNotificationOuo.removeClass('hidden');
+                $boxAdsOuo.removeClass('hidden');
+            }else {
+                $boxNotification.removeClass('hidden');
+                $boxNotificationOuo.addClass('hidden');
+                $boxAdsOuo.addClass('hidden');
+            }
+        }
+
+        function hideGetlinkResult() {
+            $fileName.html("");
+            $fileSize.html("");
+            $urlGetLinkResult.val("");
+            $btnDownload.attr('href', "");
+            $getLinkResult.addClass('hidden');
+            $boxAdsOuo.addClass('hidden');
+            $boxNotification.addClass('hidden');
+            $boxNotificationOuo.addClass('hidden');
+            $boxAdsOuo.addClass('hidden');
+        }
+
+        function showOverlay() {
+            $overlay.removeClass('hidden');
+        }
+
+        function hideOverlay() {
+            $overlay.addClass('hidden');
+        }
+    </script>
+}
