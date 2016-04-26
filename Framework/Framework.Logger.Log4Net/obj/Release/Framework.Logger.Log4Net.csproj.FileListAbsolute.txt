@@ -106,3 +106,4 @@ D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Release\System.W
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\obj\Release\Framework.Logger.Log4Net.csprojResolveAssemblyReference.cache
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\obj\Release\Framework.Logger.Log4Net.dll
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\obj\Release\Framework.Logger.Log4Net.pdb
+D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Release\Microsoft.Web.Infrastructure.dll

@@ -73,6 +73,6 @@ D:\Project\2015\get-link\Framework\Framework.Caching\bin\Debug\System.Compositio
 D:\Project\2015\get-link\Framework\Framework.Caching\bin\Debug\System.Composition.Runtime.xml
 D:\Project\2015\get-link\Framework\Framework.Caching\bin\Debug\System.Composition.TypedParts.xml
 D:\Project\2015\get-link\Framework\Framework.Caching\bin\Debug\System.Reflection.Metadata.xml
-D:\Project\2015\get-link\Framework\Framework.Caching\obj\Debug\Framework.Caching.csprojResolveAssemblyReference.cache
 D:\Project\2015\get-link\Framework\Framework.Caching\obj\Debug\Framework.Caching.dll
 D:\Project\2015\get-link\Framework\Framework.Caching\obj\Debug\Framework.Caching.pdb
+D:\Project\2015\get-link\Framework\Framework.Caching\obj\Debug\Framework.Caching.csprojResolveAssemblyReference.cache

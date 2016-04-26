@@ -78,6 +78,7 @@ D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\Newtonsoft
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\UnidecodeSharpFork.dll
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\System.Web.Razor.dll
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\Microsoft.Web.Infrastructure.dll
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\System.Web.WebPages.Deployment.dll
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\Framework.Logger.Contracts.pdb
 D:\Project\2015\get-link\Framework\Framework.Logger.Log4Net\bin\Debug\Framework.Utility.pdb

@@ -177,6 +177,7 @@
     <Compile Include="Interfaces\DAL\IBlackListRepository.cs" />
     <Compile Include="Interfaces\DAL\IRequestRepository.cs" />
     <Compile Include="Models\Business\BaseModel.cs" />
+    <Compile Include="Models\Business\Getlink\FShareRequestViewModel.cs" />
     <Compile Include="Models\Business\Getlink\FShareResultViewModel.cs" />
     <Compile Include="Models\Business\Getlink\GetlinkParamViewModel.cs" />
     <Compile Include="Models\Business\Getlink\GetlinkResultViewModel.cs" />

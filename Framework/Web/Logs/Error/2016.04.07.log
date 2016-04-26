@@ -1,0 +1,50 @@
+﻿2016-04-07 21:39:02,052 [9] ERROR: 
+<Exception details>
+    We have detected an exception. Message output start
+    [Date and time of occurrence]
+        2016/04/07 14:39:01
+    [Member Name]
+        IsGetable
+    [Source Path]
+        D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs
+    [Source Line Number]
+        310
+    [Message content]
+        Input string was not in a correct format.
+    [Stack on the internal exception]
+    [Exception class]      System.FormatException
+    [Exception message]    Input string was not in a correct format.
+    [Exception stack trace]   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Transverse.Utils.BackendHelpers.get_FreeRequestNumber() in D:\Project\2015\get-link\Framework\Transverse\Utils\BackendHelpers.cs:line 15
+   at BusinessLogic.GetlinkBusiness.IsGetable(GetlinkParamViewModel viewModel) in D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs:line 300
+</Exception details>
+
+
+
+2016-04-07 21:43:45,036 [8] ERROR: 
+<Exception details>
+    We have detected an exception. Message output start
+    [Date and time of occurrence]
+        2016/04/07 14:43:45
+    [Member Name]
+        IsGetable
+    [Source Path]
+        D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs
+    [Source Line Number]
+        310
+    [Message content]
+        Input string was not in a correct format.
+    [Stack on the internal exception]
+    [Exception class]      System.FormatException
+    [Exception message]    Input string was not in a correct format.
+    [Exception stack trace]   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at Transverse.Utils.BackendHelpers.get_FreeRequestNumber() in D:\Project\2015\get-link\Framework\Transverse\Utils\BackendHelpers.cs:line 15
+   at BusinessLogic.GetlinkBusiness.IsGetable(GetlinkParamViewModel viewModel) in D:\Project\2015\get-link\Framework\BusinessLogic\GetlinkBusiness.cs:line 300
+</Exception details>
+
+
+

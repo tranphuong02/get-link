@@ -70,6 +70,7 @@ D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DI.Unity\bin\Debug\Un
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DI.Unity\obj\Debug\Framework.DI.Unity.csprojResolveAssemblyReference.cache
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DI.Unity\obj\Debug\Framework.DI.Unity.dll
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.DI.Unity\obj\Debug\Framework.DI.Unity.pdb
+D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Microsoft.CodeAnalysis.xml
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Framework.DI.Unity.dll.config
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Framework.DI.Unity.dll
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Framework.DI.Unity.pdb
@@ -110,7 +111,6 @@ D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\UnidecodeSharpFo
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Framework.DI.Contracts.pdb
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Framework.Utility.pdb
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Antlr3.Runtime.pdb
-D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Microsoft.CodeAnalysis.xml
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
 D:\Project\2015\get-link\Framework\Framework.DI.Unity\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.xml

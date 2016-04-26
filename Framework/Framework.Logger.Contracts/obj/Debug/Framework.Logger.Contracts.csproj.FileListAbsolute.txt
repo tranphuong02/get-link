@@ -59,6 +59,6 @@ D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\bin\Debug\System.C
 D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\bin\Debug\System.Composition.Runtime.xml
 D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\bin\Debug\System.Composition.TypedParts.xml
 D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\bin\Debug\System.Reflection.Metadata.xml
-D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\obj\Debug\Framework.Logger.Contracts.csprojResolveAssemblyReference.cache
 D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\obj\Debug\Framework.Logger.Contracts.dll
 D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\obj\Debug\Framework.Logger.Contracts.pdb
+D:\Project\2015\get-link\Framework\Framework.Logger.Contracts\obj\Debug\Framework.Logger.Contracts.csprojResolveAssemblyReference.cache

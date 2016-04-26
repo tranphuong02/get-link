@@ -217,3 +217,5 @@ D:\Project\2015\get-link\Framework\Web\bin\ServiceStack.Common.xml
 D:\Project\2015\get-link\Framework\Web\obj\Release\Web.csprojResolveAssemblyReference.cache
 D:\Project\2015\get-link\Framework\Web\obj\Release\Web.dll
 D:\Project\2015\get-link\Framework\Web\obj\Release\Web.pdb
+D:\Project\2015\get-link\Framework\Web\bin\System.Collections.Immutable.dll
+D:\Project\2015\get-link\Framework\Web\bin\System.Collections.Immutable.xml

@@ -128,14 +128,16 @@ namespace BusinessLogic
 
             // Download
             csrf = GetFsCsrf(url, ref cookieContainer, ref htmlDocument, ref linkCode);
-            var result = DownloadFile(csrf, linkCode, cookieContainer);
+            var fSareResult = DownloadFile(csrf, linkCode, cookieContainer);
 
-            if (result.url == null)
+            if (fSareResult.url == null)
             {
                 return null;
             }
 
-            RewriteUrl(result);
+            var result = new FShareResultViewModel();
+
+            RewriteUrl(fSareResult);
 
             #region Insert request
 
@@ -145,7 +147,7 @@ namespace BusinessLogic
                    RequestUrl = url,
                    RequestPassword = password,
                    RequestType = (int)GetlinkType.FShare,
-                   ResultUrl = result.url,
+                   ResultUrl = fSareResult.url,
                    ResultName = "",
                    ResultSize = "",
                    IsDelete = false,
@@ -162,7 +164,7 @@ namespace BusinessLogic
             result.is_required_ads = isRequiredAds;
             if (isRequiredAds)
             {
-                GenerateAds(result, totalRequestToday, userRequest.Id);
+                GenerateAds(result, fSareResult, totalRequestToday, userRequest.Id);
             }
 
             #endregion GenerateAds
@@ -180,7 +182,6 @@ namespace BusinessLogic
 
             result.file_name = userRequest.ResultName;
             result.file_size = userRequest.ResultSize;
-            result.url = "";
 
             return result;
         }
@@ -220,7 +221,7 @@ namespace BusinessLogic
             response.Close();
         }
 
-        private FShareResultViewModel DownloadFile(string csrf, string linkCode, CookieContainer cookies)
+        private FShareRequestViewModel DownloadFile(string csrf, string linkCode, CookieContainer cookies)
         {
             var postData = string.Format(Constants.FShare.RequestDownloadParams, csrf, linkCode);
             var request = InitPost(cookies, Constants.FShare.GetFileUrl, postData);
@@ -231,7 +232,7 @@ namespace BusinessLogic
             {
                 var fshareResult = stream.ReadToEnd();
                 response.Close();
-                return JsonConvert.DeserializeObject<FShareResultViewModel>(fshareResult);
+                return JsonConvert.DeserializeObject<FShareRequestViewModel>(fshareResult);
             }
         }
 
@@ -323,13 +324,13 @@ namespace BusinessLogic
             }
         }
 
-        private void RewriteUrl(FShareResultViewModel viewModel)
+        private void RewriteUrl(FShareRequestViewModel fShareRequest)
         {
             try
             {
-                viewModel.url = viewModel.url.Replace(@"\/", "");
-                var insertPotition = viewModel.url.LastIndexOf("/", StringComparison.Ordinal) + 1;
-                viewModel.url = HttpUtility.UrlDecode(viewModel.url.Insert(insertPotition, string.Format("[{0}]-", Constants.AppName)));
+                fShareRequest.url = fShareRequest.url.Replace(@"\/", "");
+                var insertPotition = fShareRequest.url.LastIndexOf("/", StringComparison.Ordinal) + 1;
+                fShareRequest.url = HttpUtility.UrlDecode(fShareRequest.url.Insert(insertPotition, string.Format("[{0}]-", Constants.AppName)));
             }
             catch (Exception ex)
             {
@@ -337,24 +338,31 @@ namespace BusinessLogic
             }
         }
 
-        private void GenerateAds(FShareResultViewModel viewModel, int totalRequestToday, int id)
+        private void GenerateAds(FShareResultViewModel viewModel, FShareRequestViewModel fShareRequest, int totalRequestToday, int id)
         {
             try
             {
-                var downloadLink = BackendHelpers.RootUrl + "dl/" + id;
                 // ouo
                 if (totalRequestToday < 3)
                 {
                     viewModel.ads_type = (int)AdsType.Ouo;
-                    viewModel.ads_introduction = BackendHelpers.OuoIntroduction;
-                    GenerateOuoAds(viewModel, downloadLink);
+                    GenerateOuoAds(viewModel, fShareRequest);
+                }
+                else if (totalRequestToday < 6)
+                {
+                    viewModel.ads_type = (int)AdsType.Bc;
+                    GenerateBcAds(viewModel, fShareRequest);
+                }
+                else if (totalRequestToday < 9)
+                {
+                    viewModel.ads_type = (int)AdsType.LShrink;
+                    GenerateLShrinkAds(viewModel, fShareRequest);
                 }
                 // adf ly
-                else //if (totalRequestToday < 6)
+                else
                 {
                     viewModel.ads_type = (int)AdsType.Adf;
-                    viewModel.ads_introduction = BackendHelpers.AdfIntroduction;
-                    GenerateAdfAds(viewModel, downloadLink);
+                    GenerateAdfAds(viewModel, fShareRequest);
                 }
             }
             catch (Exception ex)
@@ -380,9 +388,9 @@ namespace BusinessLogic
             }
         }
 
-        private void GenerateOuoAds(FShareResultViewModel viewModel, string downloadUrl)
+        private void GenerateOuoAds(FShareResultViewModel viewModel, FShareRequestViewModel fShareRequest)
         {
-            var adsUrl = BackendHelpers.OuoUrl + downloadUrl;
+            var adsUrl = BackendHelpers.OuoUrl + fShareRequest.url;
             var request = (HttpWebRequest)WebRequest.Create(adsUrl);
             var response = (HttpWebResponse)request.GetResponse();
             var responseStream = response.GetResponseStream();
@@ -397,10 +405,44 @@ namespace BusinessLogic
             response.Close();
         }
 
-        private void GenerateAdfAds(FShareResultViewModel viewModel, string downloadUrl)
+        private void GenerateBcAds(FShareResultViewModel viewModel, FShareRequestViewModel fShareRequest)
         {
-            var adsUrl = BackendHelpers.AdfUrl + downloadUrl;
-             var request = (HttpWebRequest)WebRequest.Create(adsUrl);
+            var adsUrl = BackendHelpers.BcUrl + fShareRequest.url;
+            var request = (HttpWebRequest)WebRequest.Create(adsUrl);
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseStream = response.GetResponseStream();
+            if (responseStream == null) return;
+
+            using (var stream = new StreamReader(responseStream))
+            {
+                var htmlDocument = HtmlDocument(stream.ReadToEnd());
+
+                viewModel.ads_url = htmlDocument.DocumentNode.InnerText;
+            }
+            response.Close();
+        }
+
+        private void GenerateLShrinkAds(FShareResultViewModel viewModel, FShareRequestViewModel fShareRequest)
+        {
+            var adsUrl = BackendHelpers.LShrinkUrl + fShareRequest.url;
+            var request = (HttpWebRequest)WebRequest.Create(adsUrl);
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseStream = response.GetResponseStream();
+            if (responseStream == null) return;
+
+            using (var stream = new StreamReader(responseStream))
+            {
+                var htmlDocument = HtmlDocument(stream.ReadToEnd());
+
+                viewModel.ads_url = htmlDocument.DocumentNode.InnerText;
+            }
+            response.Close();
+        }
+
+        private void GenerateAdfAds(FShareResultViewModel viewModel, FShareRequestViewModel fShareRequest)
+        {
+            var adsUrl = BackendHelpers.AdfUrl + fShareRequest.url;
+            var request = (HttpWebRequest)WebRequest.Create(adsUrl);
             var response = (HttpWebResponse)request.GetResponse();
             var responseStream = response.GetResponseStream();
             if (responseStream == null) return;

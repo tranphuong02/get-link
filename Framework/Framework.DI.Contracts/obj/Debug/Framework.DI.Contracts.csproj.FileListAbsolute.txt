@@ -59,6 +59,6 @@ D:\Project\2015\get-link\Framework\Framework.DI.Contracts\bin\Debug\System.Compo
 D:\Project\2015\get-link\Framework\Framework.DI.Contracts\bin\Debug\System.Composition.Runtime.xml
 D:\Project\2015\get-link\Framework\Framework.DI.Contracts\bin\Debug\System.Composition.TypedParts.xml
 D:\Project\2015\get-link\Framework\Framework.DI.Contracts\bin\Debug\System.Reflection.Metadata.xml
-D:\Project\2015\get-link\Framework\Framework.DI.Contracts\obj\Debug\Framework.DI.Contracts.csprojResolveAssemblyReference.cache
 D:\Project\2015\get-link\Framework\Framework.DI.Contracts\obj\Debug\Framework.DI.Contracts.dll
 D:\Project\2015\get-link\Framework\Framework.DI.Contracts\obj\Debug\Framework.DI.Contracts.pdb
+D:\Project\2015\get-link\Framework\Framework.DI.Contracts\obj\Debug\Framework.DI.Contracts.csprojResolveAssemblyReference.cache

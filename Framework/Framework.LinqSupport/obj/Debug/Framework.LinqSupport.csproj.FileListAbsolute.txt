@@ -5,6 +5,5 @@ D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Debug
 D:\Document\GetLink\mvc5-web-framework\Framework\Framework.LinqSupport\obj\Debug\Framework.LinqSupport.pdb
 D:\Project\2015\get-link\Framework\Framework.LinqSupport\bin\Debug\Framework.LinqSupport.dll
 D:\Project\2015\get-link\Framework\Framework.LinqSupport\bin\Debug\Framework.LinqSupport.pdb
-D:\Project\2015\get-link\Framework\Framework.LinqSupport\obj\Debug\Framework.LinqSupport.csprojResolveAssemblyReference.cache
 D:\Project\2015\get-link\Framework\Framework.LinqSupport\obj\Debug\Framework.LinqSupport.dll
 D:\Project\2015\get-link\Framework\Framework.LinqSupport\obj\Debug\Framework.LinqSupport.pdb
